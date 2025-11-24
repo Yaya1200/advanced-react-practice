@@ -5,23 +5,24 @@ function App() {
   const [count, setcount] = useState(0);
   const [count1, setcount1] = useState(0);
   function increase(){
-    setcount(count + 1);
+    setcount1(count1 + 1);
   }
   function change1(num){
    console.log("calculation done");
    return (num * num)
   }
- const result = change1(count);
+ const result = useMemo(()=>{
+return change1(count)
+ }, [count]) ;
   return (
     
       <div>
-      hello {`${count} - ${count1}`}
+      hello {`${result} - ${count1}`}
       <input onChange={(e)=>{
           setcount(e.target.value)
       }
       }/>
       <button onClick={increase}>increase</button>
-      <button onClick={change1}> cube</button>
       </div>
   
       
