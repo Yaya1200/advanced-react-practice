@@ -1,42 +1,27 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import './App.css'
 
 function App() {
-  const count = useRef(0)
-  const changecolor = useRef();
-  const [values, setvalues] = useState({title: "", content: ""})
-  const [value1, setvalue1] = useState([])
-   function increase(){
-     }
-     useEffect(()=>{
-      count.current = count.current + 1;
-     })
-     function changecolor1
-     function changeinputs(e){
-       const inputname = e.target.name;
-       const inputvalue = e.target.value;
-       setvalues((prev)=>{
-        return ({
-        ...prev, 
-        [inputname]: inputvalue
-     })})
-     }
-     function output(){
-      setvalue1((prev)=>( [...prev, values])
-      )
-     }
-
+  const [count, setcount] = useState(0);
+  const [count1, setcount1] = useState(0);
+  function increase(){
+    setcount(count + 1);
+  }
+  function change1(num){
+   console.log("calculation done");
+   return (num * num)
+  }
+ const result = change1(count);
   return (
     
       <div>
-      hello     {`${count.current}`}
-      <button onClick={increase}>increases</button>
-      <input  onChange={changeinputs} name='title' placeholder='please enter the value'/>
-      <input onChange={changeinputs} name='content' placeholder="please enter the content"/>
-      <button onClick={output}>output</button>
-      {value1.length > 0 && value1.map((element, index)=>{
-        return <text key={index}>{`${element.title} - ${element.content}`}</text>
-      })}
+      hello {`${count} - ${count1}`}
+      <input onChange={(e)=>{
+          setcount(e.target.value)
+      }
+      }/>
+      <button onClick={increase}>increase</button>
+      <button onClick={change1}> cube</button>
       </div>
   
       
