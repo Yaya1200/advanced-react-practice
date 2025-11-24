@@ -7,6 +7,13 @@ function App() {
    function increase(){
       setCount(count +1)
      }
+     function changeinputs(e){
+       const inputname = e.target.name;
+       const inputvalue = e.target.value;
+       setvalues((prev)=>{(
+        ...prev, [inputname] = inputvalue
+       )})
+     }
 
   return (
     
