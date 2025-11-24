@@ -13,7 +13,7 @@ function App() {
         setCount(count + 1)
       }, 2000);
       
-     })
+     },[])
      function changeinputs(e){
        const inputname = e.target.name;
        const inputvalue = e.target.value;
