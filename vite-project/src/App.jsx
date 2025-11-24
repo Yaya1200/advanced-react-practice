@@ -4,7 +4,7 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
   const [values, setvalues] = useState({title: "", content: ""})
-  const [value1, setvalue1] = useState()
+  const [value1, setvalue1] = useState([])
    function increase(){
       setCount(count +1)
      }
@@ -29,7 +29,9 @@ function App() {
       <input  onChange={changeinputs} name='title' placeholder='please enter the value'/>
       <input onChange={changeinputs} name='content' placeholder="please enter the content"/>
       <button onClick={output}>output</button>
-      <text> {`${value1.title, value1.content}`}</text>
+      {value1.forEach((element)=>{
+       <text>{`${element.title, element.content}`}</text>
+      })}
       </div>
   
       
