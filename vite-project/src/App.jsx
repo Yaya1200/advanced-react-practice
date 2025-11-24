@@ -18,7 +18,8 @@ function App() {
      })})
      }
      function output(){
-      return setvalue1(values)
+      setvalue1((prev)=>( [...prev, values])
+      )
      }
 
   return (
@@ -29,8 +30,8 @@ function App() {
       <input  onChange={changeinputs} name='title' placeholder='please enter the value'/>
       <input onChange={changeinputs} name='content' placeholder="please enter the content"/>
       <button onClick={output}>output</button>
-      {value1.forEach((element)=>{
-       <text>{`${element.title, element.content}`}</text>
+      {value1.length > 0 && value1.map((element, index)=>{
+        return <text key={index}>{`${element.title} - ${element.content}`}</text>
       })}
       </div>
   
