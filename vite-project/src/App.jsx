@@ -1,19 +1,17 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const count = useRef(0)
   const [values, setvalues] = useState({title: "", content: ""})
   const [value1, setvalue1] = useState([])
    function increase(){
-      setCount(count +1)
+      setCount(count.current +1)
      }
      useEffect(()=>{
-      setInterval(() => {
-        setCount(count + 1)
-      }, 2000);
+        setCount(count.current + 1);
       
-     },[count])
+     })
      function changeinputs(e){
        const inputname = e.target.name;
        const inputvalue = e.target.value;
