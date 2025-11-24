@@ -3,15 +3,15 @@ import './App.css'
 
 function App() {
   const count = useRef(0)
+  const changecolor = useRef();
   const [values, setvalues] = useState({title: "", content: ""})
   const [value1, setvalue1] = useState([])
    function increase(){
-      setCount(count.current +1)
      }
      useEffect(()=>{
-        setCount(count.current + 1);
-      
+      count.current = count.current + 1;
      })
+     function changecolor1
      function changeinputs(e){
        const inputname = e.target.name;
        const inputvalue = e.target.value;
@@ -29,7 +29,7 @@ function App() {
   return (
     
       <div>
-      hello     {`${count}`}
+      hello     {`${count.current}`}
       <button onClick={increase}>increases</button>
       <input  onChange={changeinputs} name='title' placeholder='please enter the value'/>
       <input onChange={changeinputs} name='content' placeholder="please enter the content"/>
