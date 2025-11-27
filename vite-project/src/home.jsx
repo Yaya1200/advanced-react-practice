@@ -15,13 +15,14 @@ return change1(count)
  }, [count]) ;
   return (
     
-      <div>
+      <div style={{border : '1px, solid, black', width: '500px', height: '100px'}}>
       hello {`${result} - ${count1}`}
       <input onChange={(e)=>{
           setcount(e.target.value)
       }
       }/>
       <button onClick={increase}>increase</button>
+      <button> dark mode</button>
       </div>
   
       
@@ -29,4 +30,4 @@ return change1(count)
   )
 
 }
-export default Home;
+export default Home
